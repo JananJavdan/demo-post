@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Comment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Add a New Comment</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="new_post.html">New Post</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form id="new-comment-form">
+        <label for="post-id">Post ID:</label>
+        <input type="text" id="post-id" name="post-id" required>
+
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("new-comment-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const postId = document.getElementById("post-id").value;
+            const comment = document.getElementById("comment").value;
+            console.log("New comment submitted", { postId, comment });
+            alert("New comment submitted");
+        });
+    });
+</script>
+</body>
+</html>

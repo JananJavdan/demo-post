@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Post</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Update Post</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="new_post.html">New Post</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form id="update-post-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <button type="submit">Update</button>
+    </form>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("update-post-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+            console.log("Post updated", { title, content });
+            alert("Post updated");
+        });
+    });
+</script>
+</body>
+</html>

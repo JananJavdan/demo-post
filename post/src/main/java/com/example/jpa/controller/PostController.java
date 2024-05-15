@@ -19,10 +19,12 @@ public class PostController {
     public Page<Post> getAllPosts(Pageable pageable) {
         return postRepository.findAll(pageable);
     }
+
     @PostMapping("/posts")
     public Post createPost(@Valid @RequestBody Post post) {
         return postRepository.save(post);
     }
+
     @PutMapping("/posts/{postId}")
     public Post updatePost(@PathVariable Long postId, @Valid @RequestBody
     Post postRequest) {

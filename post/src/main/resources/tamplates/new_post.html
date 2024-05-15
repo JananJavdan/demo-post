@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Create a New Post</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="new_post.html">New Post</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <form id="new-post-form">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="content">Content:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("new-post-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+            console.log("New post submitted", { title, content });
+            alert("New post submitted");
+        });
+    });
+</script>
+</body>
+</html>
